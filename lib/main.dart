@@ -132,7 +132,7 @@ class UserInterfaceScreen extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(radius: 30, backgroundColor: Colors.grey),
+                        CircleAvatar(radius: 30, backgroundColor: Colors.grey,backgroundImage: AssetImage('assets/images/dp.png'),),
                         const SizedBox(width: 10),
                         Flexible(
                           child: Column(
@@ -174,46 +174,130 @@ class UserInterfaceScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
                       '"Mine is definitely the peace in the morning."',
-                      style: TextStyle(fontSize: 14, color: Colors.grey,fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Column(
                     spacing: 10,
                     children: [
                       Row(
                         spacing: 10,
                         children: [
-                          buildOption('The peace in the early mornings', context,'A'),
-                          buildOption('The magical golden hours', context,'B'),
+                          buildOption(
+                            'The peace in the early mornings',
+                            context,
+                            'A',
+                          ),
+                          buildOption('The magical golden hours', context, 'B'),
                         ],
                       ),
                       Row(
                         spacing: 10,
                         children: [
-                          buildOption('Wind-down time after dinners', context,'C'),
-                          buildOption('The serenity past midnight', context,'D'),
+                          buildOption(
+                            'Wind-down time after dinners',
+                            context,
+                            'C',
+                          ),
+                          buildOption(
+                            'The serenity past midnight',
+                            context,
+                            'D',
+                          ),
                         ],
                       ),
                     ],
-                  )
+                  ),
+                  SizedBox(height: 7),
+                  Row(
+                    spacing: 7,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Pick your option.',
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                          Text(
+                            'See who has a similar mind.',
+                            style: TextStyle(color: Colors.white, fontSize: 12),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      Image.asset(
+                        'assets/images/mic.png',
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.contain,
+                      ),
+                      Image.asset(
+                        'assets/images/arrow right.png',
+                        height: 50,
+                        width: 50,
+                        fit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(color: Color(0XFF0F1115)),
+      bottomNavigationBar: BottomAppBar(
+        color: Color(0XFF0F1115),
+        child: SizedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(
+                'assets/images/Card.png',
+                height: 50,
+                width: 50,
+                fit: BoxFit.contain,
+              ),
+              Image.asset(
+                'assets/images/fire.png',
+                height: 50,
+                width: 50,
+                fit: BoxFit.contain,
+              ),
+              Image.asset(
+                'assets/images/Chat.png',
+                height: 50,
+                width: 50,
+                fit: BoxFit.contain,
+              ),
+              Image.asset(
+                'assets/images/User.png',
+                height: 50,
+                width: 50,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
   Widget buildOption(String text, BuildContext context, String profileText) {
     return Expanded(
-      child: Container( 
-        decoration: BoxDecoration( 
+      child: Container(
+        decoration: BoxDecoration(
           color: Color(0XFF232A2E),
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: profileText=='D'? Color(0XFF8B88EF): Colors.transparent,width: 2)
+          border: Border.all(
+            color: profileText == 'D' ? Color(0XFF8B88EF) : Colors.transparent,
+            width: 2,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.all(13),
@@ -221,11 +305,17 @@ class UserInterfaceScreen extends StatelessWidget {
             children: [
               Container(
                 width: 25,
-                height: 25,               
+                height: 25,
                 decoration: BoxDecoration(
-                  border: Border.all(color: profileText=='D'? Colors.transparent: Colors.white),
+                  border: Border.all(
+                    color:
+                        profileText == 'D' ? Colors.transparent : Colors.white,
+                  ),
                   shape: BoxShape.circle,
-                  color: profileText=='D'? Color(0XFF8B88EF): Colors.transparent,
+                  color:
+                      profileText == 'D'
+                          ? Color(0XFF8B88EF)
+                          : Colors.transparent,
                 ),
                 child: Center(
                   child: Text(
