@@ -6,7 +6,7 @@ class BottomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: Color(0XFF0F1115),
+      color: Color.fromARGB(255, 23, 26, 32),
       child: SizedBox(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
