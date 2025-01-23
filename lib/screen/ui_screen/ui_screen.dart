@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stroll_dating_app/screen/ui_screen/bottom_appbar_widget/bottom_appbar_widget.dart';
 import 'package:stroll_dating_app/screen/ui_screen/cards_widget/cards_widget.dart';
 
 class UserInterfaceScreen extends StatelessWidget {
@@ -8,51 +9,7 @@ class UserInterfaceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BodyWidget(screensize: screensize),
-      bottomNavigationBar: BottomAppBarWidget(),
-    );
-  }
-}
-
-class BottomAppBarWidget extends StatelessWidget {
-  const BottomAppBarWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomAppBar(
-      color: Color(0XFF0F1115),
-      child: SizedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(
-              'assets/images/Card.png',
-              height: 50,
-              width: 50,
-              fit: BoxFit.contain,
-            ),
-            Image.asset(
-              'assets/images/fire.png',
-              height: 50,
-              width: 50,
-              fit: BoxFit.contain,
-            ),
-            Image.asset(
-              'assets/images/Chat.png',
-              height: 50,
-              width: 50,
-              fit: BoxFit.contain,
-            ),
-            Image.asset(
-              'assets/images/User.png',
-              height: 50,
-              width: 50,
-              fit: BoxFit.contain,
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: BottomAppBarWidget(screensize: screensize,),
     );
   }
 }
