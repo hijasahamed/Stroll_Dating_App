@@ -210,7 +210,7 @@ class UserInterfaceScreen extends StatelessWidget {
   Widget buildOption(String text, BuildContext context, String profileText) {
     return Expanded(
       child: Container( 
-        decoration: BoxDecoration(
+        decoration: BoxDecoration( 
           color: Color(0XFF232A2E),
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: profileText=='D'? Color(0XFF8B88EF): Colors.transparent,width: 2)
