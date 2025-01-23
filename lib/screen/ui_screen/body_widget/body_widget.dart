@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stroll_dating_app/screen/ui_screen/body_widget/cards_widget/cards_widget.dart';
 import 'package:stroll_dating_app/screen/ui_screen/body_widget/fade_image_widget/fade_image_widget.dart';
+import 'package:stroll_dating_app/screen/ui_screen/body_widget/location_time_widget/location_time_widget.dart';
 import 'package:stroll_dating_app/screen/ui_screen/body_widget/water_image_widget/water_image_widget.dart';
 
 class BodyWidget extends StatelessWidget {
@@ -17,68 +18,7 @@ class BodyWidget extends StatelessWidget {
       children: [
         FadeImageWidget(),
         WaterImageWidget(screensize: screensize),
-        
-        Positioned(
-          top: screensize.height / 12,
-          left: 0,
-          right: 0,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 5,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                spacing: 5,
-                children: [
-                  Text(
-                    'Stroll Bonfire',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: Icon(
-                      Icons.keyboard_arrow_down,
-                      color: Color.fromARGB(255, 255, 255, 255),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    'assets/images/clock.png',
-                    height: 18,
-                    width: 18,
-                    fit: BoxFit.contain,
-                  ),
-                  const SizedBox(width: 5),
-                  Text(
-                    '22h 00m',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                  const SizedBox(width: 10),
-                  Image.asset(
-                    'assets/images/person.png',
-                    height: 18,
-                    width: 18,
-                    fit: BoxFit.contain,
-                  ),
-                  const SizedBox(width: 5),
-                  Text(
-                    '103',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+        LocationTimeWidget(screensize: screensize),
         Positioned(
           bottom: 0,
           child: Container(
